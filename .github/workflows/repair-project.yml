@@ -1,0 +1,113 @@
+name: Repair Beehome project structure
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: "!contains(github.event.head_commit.message, '[skip repair]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore Vite/React structure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p src/components src/data src/styles
+          mkdir -p public/images/"vasantham avenue"
+          mkdir -p public/images/"kungumam nagar"
+          mkdir -p public/images/"Sri vellaiyammal garden-69"
+          mkdir -p public/images/"sathya nagar"
+
+          for f in Cursor.tsx Navigation.tsx Hero.tsx ProjectsSection.tsx WhySection.tsx TeamSection.tsx CtaFooter.tsx ProjectDetail.tsx Lightbox.tsx; do
+            if [ -f "$f" ]; then git mv "$f" "src/components/$f"; fi
+          done
+
+          if [ -f App.tsx ]; then git mv App.tsx src/App.tsx; fi
+          if [ -f main.tsx ]; then git mv main.tsx src/main.tsx; fi
+          if [ -f content.ts ]; then git mv content.ts src/data/content.ts; fi
+          if [ -f global.css ]; then git mv global.css src/styles/global.css; fi
+
+          cat > tsconfig.json <<'EOF'
+          {
+            "compilerOptions": {
+              "target": "ES2020",
+              "useDefineForClassFields": true,
+              "lib": ["ES2020", "DOM", "DOM.Iterable"],
+              "module": "ESNext",
+              "skipLibCheck": true,
+              "moduleResolution": "bundler",
+              "allowImportingTsExtensions": true,
+              "resolveJsonModule": true,
+              "isolatedModules": true,
+              "moduleDetection": "force",
+              "noEmit": true,
+              "jsx": "react-jsx",
+              "strict": true,
+              "noUnusedLocals": false,
+              "noUnusedParameters": false,
+              "noFallthroughCasesInSwitch": true
+            },
+            "include": ["src"]
+          }
+          EOF
+
+          # Put the existing repository images at the public paths used by the app.
+          cp -f "Gemini_Generated_Image_ahvqlzahvqlzahvq.png" "public/images/vasantham avenue/" || true
+          cp -f "Gemini_Generated_Image_x72vp6x72vp6x72v.png" "public/images/vasantham avenue/" || true
+          cp -f "plot-view-1.jpg" "plot-view-2.jpg" "plot-view-3.jpg" "plot-view-4.jpg" "plot-view-5.jpg" "public/images/vasantham avenue/" || true
+
+          cp -f "Gemini_Generated_Image_824c95824c95824c.png" "public/images/kungumam nagar/" || true
+          cp -f "Gemini_Generated_Image_gnnnqhgnnnqhgnnn.png" "public/images/kungumam nagar/" || true
+          cp -f "plot-real-view-1.jpg" "plot-real-view-2.jpg" "plot-real-view-3.jpg" "plot-real-view-4.jpg" "plot-real-view-5.jpg" "public/images/kungumam nagar/" || true
+
+          cp -f "1000035270.jpg" "public/images/Sri vellaiyammal garden-69/" || true
+
+          cp -f "Gemini_Generated_Image_ezu2muezu2muezu2.png" "public/images/sathya nagar/" || true
+          cp -f "1000038393.jpg" "1000038394.jpg" "1000038395.jpg" "1000038397.jpg" "public/images/sathya nagar/" || true
+
+          cp -f "IMG-20260815-WA0011.jpg" "public/images/" || true
+          cp -f "img-20260815-wa0011 copy.jpg" "public/images/" || true
+
+          # Ensure this site remains a normal vertically scrolling page.
+          cat >> src/styles/global.css <<'EOF'
+
+          /* Final production overflow safety: preserve normal vertical page scrolling. */
+          html, body, #root { width: 100%; max-width: 100%; }
+          body { overscroll-behavior-x: none; }
+          img, video, iframe, svg { max-width: 100%; }
+          .container, .project-grid, .project-card { min-width: 0; max-width: 100%; box-sizing: border-box; }
+          .project-grid { overflow: visible; }
+          @media (max-width: 767px) {
+            .project-grid { grid-template-columns: 1fr !important; }
+          }
+          @media (min-width: 768px) and (max-width: 1199px) {
+            .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+          }
+          @media (min-width: 1200px) {
+            .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+          }
+          EOF
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore production Vite structure and responsive layout [skip repair]"
+            git push
+          fi
+
+      - name: Verify production build
+        run: |
+          npm ci
+          npm run build
