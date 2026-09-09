@@ -1225,3 +1225,19 @@ video, canvas, svg, iframe, input, textarea, select, button {
 input, textarea, select {
   min-width: 0;
 }
+
+/* Final production overflow safety: preserve normal vertical page scrolling. */
+html, body, #root { width: 100%; max-width: 100%; }
+body { overscroll-behavior-x: none; }
+img, video, iframe, svg { max-width: 100%; }
+.container, .project-grid, .project-card { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.project-grid { overflow: visible; }
+@media (max-width: 767px) {
+  .project-grid { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (min-width: 1200px) {
+  .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+}

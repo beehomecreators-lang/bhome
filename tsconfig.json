@@ -17,5 +17,5 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["*.ts", "*.tsx"]
+  "include": ["src"]
 }
