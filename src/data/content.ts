@@ -56,7 +56,7 @@ export const projects: Project[] = [
     id: "kungumam-nagar",
     name: "Kungumam Nagar",
     type: "Residential Plots",
-    price: "₹360",
+    price: "₹399",
     location: "Kungumam Nagar",
     mapsUrl: "https://maps.app.goo.gl/UzvvgJTmCTJecBH89",
     image: "/images/kungumam nagar/Gemini_Generated_Image_824c95824c95824c.png",
