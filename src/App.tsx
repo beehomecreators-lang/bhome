@@ -26,6 +26,25 @@ export function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  // Make all content images interactive: clicking an image opens it full size.
+  // Links are excluded so image-based links (such as the footer brand) keep their normal behavior.
+  useEffect(() => {
+    const onImageClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof HTMLImageElement)) return;
+      if (target.closest(".lightbox")) return;
+      if (target.closest("a")) return;
+
+      setZoomImage({
+        src: target.currentSrc || target.src,
+        alt: target.alt || "Bee Home Creators image",
+      });
+    };
+
+    document.addEventListener("click", onImageClick);
+    return () => document.removeEventListener("click", onImageClick);
+  }, []);
+
   const project = projects.find(
     (p: { id: string }) => path === `/project/${p.id}`
   );
