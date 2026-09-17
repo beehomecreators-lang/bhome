@@ -59,9 +59,9 @@ export const projects: Project[] = [
     price: "₹399",
     location: "Kungumam Nagar",
     mapsUrl: "https://maps.app.goo.gl/UzvvgJTmCTJecBH89",
-    image: "/images/kungumam nagar/Gemini_Generated_Image_824c95824c95824c.png",
+    image: "/images/kungumam nagar/kungumam-nagar-399.svg",
     images: [
-      "/images/kungumam nagar/Gemini_Generated_Image_824c95824c95824c.png",
+      "/images/kungumam nagar/kungumam-nagar-399.svg",
       "/images/kungumam nagar/Gemini_Generated_Image_gnnnqhgnnnqhgnnn.png",
       "/images/kungumam nagar/plot-real-view-1.jpg",
       "/images/kungumam nagar/plot-real-view-2.jpg",
