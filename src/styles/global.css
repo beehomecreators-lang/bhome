@@ -1369,3 +1369,26 @@ img, video, iframe, svg { max-width: 100%; }
 @media (min-width: 1200px) {
   .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
 }
+
+
+/* Larger full-screen image preview. */
+.lightbox {
+  padding: 20px;
+}
+.lightbox img {
+  width: min(92vw, 1100px);
+  max-width: 92vw;
+  max-height: 92vh;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  .lightbox {
+    padding: 12px;
+  }
+  .lightbox img {
+    width: 94vw;
+    max-width: 94vw;
+    max-height: 90vh;
+  }
+}
