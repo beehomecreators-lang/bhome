@@ -127,7 +127,14 @@ function ProjectCard({
           alt={`${project.name} plot project`}
           data-cursor="image"
           data-cursor-label="Zoom"
-          onClick={() => onZoom(project.image, `${project.name} plot project`)}
+          onClick={() =>
+            onZoom(
+              project.id === "sre-vasantham-avenue"
+                ? "/images/vasantham avenue/Gemini_Generated_Image_ahvqlzahvqlzahvq.png"
+                : project.image,
+              `${project.name} plot project`
+            )
+          }
         />
         <div className="project-card-index">
           {String(index + 1).padStart(2, "0")}
