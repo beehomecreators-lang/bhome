@@ -17,7 +17,17 @@ export function ProjectDetail({
 }) {
   const [sent, setSent] = useState(false);
   const [zoom, setZoom] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(project.image);
+  const highResVasantham =
+    "/images/vasantham avenue/Gemini_Generated_Image_ahvqlzahvqlzahvq.png";
+  const displayImages =
+    project.id === "sre-vasantham-avenue"
+      ? (project.images ?? [project.image]).map((img, i) =>
+          i === 0 ? highResVasantham : img
+        )
+      : (project.images ?? [project.image]);
+  const [selectedImage, setSelectedImage] = useState(
+    project.id === "sre-vasantham-avenue" ? highResVasantham : project.image
+  );
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -194,7 +204,7 @@ export function ProjectDetail({
             </p>
           </div>
           <div className="gallery-grid">
-            {(project.images ?? [project.image]).map((img, i) => (
+            {displayImages.map((img, i) => (
               <button
                 key={img}
                 className={`gallery-card ${selectedImage === img ? "is-selected" : ""}`}
