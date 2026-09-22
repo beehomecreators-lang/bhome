@@ -37,9 +37,9 @@ export const projects: Project[] = [
     price: "₹777",
     location: "Vasantham Avenue",
     mapsUrl: "https://maps.app.goo.gl/Ugq7GX4cSrfxzTJt8",
-    image: "/images/vasantham avenue/Vasantham-Avenue-Updated.jpg",
+    image: "/images/vasantham avenue/Gemini_Generated_Image_ahvqlzahvqlzahvq.png",
     images: [
-      "/images/vasantham avenue/Vasantham-Avenue-Updated.jpg",
+      "/images/vasantham avenue/Gemini_Generated_Image_ahvqlzahvqlzahvq.png",
       "/images/vasantham avenue/Gemini_Generated_Image_x72vp6x72vp6x72v.png",
       "/images/vasantham avenue/plot-view-1.jpg",
       "/images/vasantham avenue/plot-view-2.jpg",
