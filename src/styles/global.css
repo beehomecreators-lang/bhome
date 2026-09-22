@@ -956,9 +956,15 @@ main, section, header, footer, nav, article, div {
 }
 @keyframes lightbox-in { from { opacity: 0; } to { opacity: 1; } }
 .lightbox img {
-  max-width: 100%;
-  max-height: 90vh;
+  width: auto;
+  height: auto;
+  max-width: 92vw;
+  max-height: 92vh;
   object-fit: contain;
+  object-position: center;
+  image-rendering: auto;
+  filter: none !important;
+  transform: none !important;
   border-radius: 8px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   cursor: default;
