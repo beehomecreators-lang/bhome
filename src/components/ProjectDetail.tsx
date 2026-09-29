@@ -189,6 +189,48 @@ export function ProjectDetail({
             </div>
           </div>
         </div>
+        <section className="detail-overview-grid">
+          <article className="detail-overview-card">
+            <span className="panel-kicker">Project overview</span>
+            <h2>${project.name}</h2>
+            <p>
+              This project page presents the information currently published
+              by Bee Home Creators for ${project.name}. Project-specific
+              descriptions and specifications can be expanded as verified
+              information becomes available.
+            </p>
+          </article>
+          <article className="detail-overview-card">
+            <span className="panel-kicker">Property details</span>
+            <ul>
+              <li>Property type: ${project.type}</li>
+              <li>Published starting price: ${project.price} / sq.ft</li>
+              <li>Location: ${project.location}</li>
+            </ul>
+            <p className="detail-placeholder">
+              Plot dimensions, total project area, approvals, and other
+              specifications are not currently listed on this page.
+            </p>
+          </article>
+          <article className="detail-overview-card">
+            <span className="panel-kicker">Key features &amp; amenities</span>
+            <p className="detail-placeholder">
+              Verified project-specific features and amenities are not
+              currently listed on the website. Add them here when confirmed.
+            </p>
+            {project.offers && project.offers.length > 0 && (
+              <ul>
+                {project.offers.map((offer) => <li key={offer}>{offer}</li>)}
+              </ul>
+            )}
+          </article>
+          <article className="detail-overview-card">
+            <span className="panel-kicker">Connectivity &amp; location highlights</span>
+            <ul>
+              {project.landmarks.map((landmark) => <li key={landmark}>{landmark}</li>)}
+            </ul>
+          </article>
+        </section>
         <section className="detail-gallery">
           <div className="gallery-heading">
             <div>
