@@ -139,4 +139,5 @@ export const teamMembers: TeamMember[] = [
   { id: "EMP-010", name: "X. Jeswin", designation: "Digital Marketing Manager", mobile: "9600560696" },
   { id: "EMP-011", name: "Leena Renu", designation: "Admin", mobile: "6381895472" },
   { id: "EMP-012", name: "Amala", designation: "Operator", mobile: "6381905169" },
+  { id: "EMP-013", name: "Mohamed Thameem.M", designation: "HR", mobile: "" },
 ];
