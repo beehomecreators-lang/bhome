@@ -62,7 +62,6 @@ export const projects: Project[] = [
     image: "/images/kungumam nagar/kungumam-nagar-399.svg",
     images: [
       "/images/kungumam nagar/kungumam-nagar-399.svg",
-      "/images/kungumam nagar/Gemini_Generated_Image_gnnnqhgnnnqhgnnn.png",
       "/images/kungumam nagar/plot-real-view-1.jpg",
       "/images/kungumam nagar/plot-real-view-2.jpg",
       "/images/kungumam nagar/plot-real-view-3.jpg",
