@@ -9,6 +9,9 @@ import { WhySection } from "./components/WhySection";
 import { TeamSection } from "./components/TeamSection";
 import { CtaSection, Footer } from "./components/CtaFooter";
 import { ProjectDetail } from "./components/ProjectDetail";
+import { AboutSection } from "./components/AboutSection";
+import { SignatureProjectsSection } from "./components/SignatureProjectsSection";
+import { TeamPage } from "./components/TeamPage";
 import { Lightbox } from "./components/Lightbox";
 
 export function App() {
@@ -45,8 +48,15 @@ export function App() {
     return () => document.removeEventListener("click", onImageClick);
   }, []);
 
+  const projectRoutes: Record<string, string> = {
+    "sre-vasantham-avenue": "/vasantham-avenue",
+    "kungumam-nagar": "/kungumam-nagar",
+    "sri-vellaiyammal-garden-69": "/shree-vellaiyammal-garden",
+    "sathya-nagar": "/sathya-nagar",
+  };
   const project = projects.find(
-    (p: { id: string }) => path === `/project/${p.id}`
+    (p: { id: string }) =>
+      path === `/project/${p.id}` || path === projectRoutes[p.id]
   );
 
   const openProject = (id: string) => {
@@ -143,6 +153,8 @@ export function App() {
       </div>
       {project ? (
         <ProjectDetail project={project} onBack={goHome} />
+      ) : path === "/team" || path === "/employees" ? (
+        <TeamPage />
       ) : (
         <>
           <Navigation onMenu={() => setMenuOpen(true)} transparent />
@@ -153,6 +165,8 @@ export function App() {
               onOpen={openProject}
               onZoom={(src, alt) => setZoomImage({ src, alt })}
             />
+            <AboutSection />
+            <SignatureProjectsSection />
             <WhySection />
             <TeamSection />
             <CtaSection />
