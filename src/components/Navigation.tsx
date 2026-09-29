@@ -107,7 +107,7 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
       </div>
       <nav>
         <a href="/" onClick={onClose}>Home</a>
-        <a href="/#about" onClick={onClose}>About Us</a>
+        <a href="/about" onClick={onClose}>About Us</a>
         <span className="mobile-projects-title">Projects</span>
         <a href="/kungumam-nagar" onClick={onClose}>Kungumam Nagar</a>
         <a href="/vasantham-avenue" onClick={onClose}>Vasantham Avenue</a>
