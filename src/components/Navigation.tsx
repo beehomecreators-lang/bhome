@@ -45,7 +45,7 @@ export function Navigation({
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="/">Home</a>
-          <a href="/#about">About Us</a>
+          <a href="/about">About Us</a>
           <div className="nav-projects">
             <a href="/#projects" className="nav-projects-trigger">Projects</a>
             <div className="nav-projects-menu">
