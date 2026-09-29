@@ -12,6 +12,7 @@ import { ProjectDetail } from "./components/ProjectDetail";
 import { AboutSection } from "./components/AboutSection";
 import { SignatureProjectsSection } from "./components/SignatureProjectsSection";
 import { TeamPage } from "./components/TeamPage";
+import { AboutPage } from "./components/AboutPage";
 import { Lightbox } from "./components/Lightbox";
 
 export function App() {
@@ -155,6 +156,8 @@ export function App() {
         <ProjectDetail project={project} onBack={goHome} />
       ) : path === "/team" || path === "/employees" ? (
         <TeamPage />
+      ) : path === "/about" ? (
+        <AboutPage />
       ) : (
         <>
           <Navigation onMenu={() => setMenuOpen(true)} transparent />
