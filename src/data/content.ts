@@ -9,10 +9,11 @@ export const COMPLIANCE_TEXT =
   "DTCP APPROVED PLOTS AND RERA REGISTERED PROJECT";
 
 export const NAV_LINKS = [
-  { label: "Our projects", href: "#projects" },
-  { label: "Why choose us", href: "#why-us" },
-  { label: "Our team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Our Team", href: "/team" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export interface Project {
@@ -100,9 +101,9 @@ export const projects: Project[] = [
     price: "₹555",
     location: "Sathya Nagar",
     mapsUrl: "",
-    image: "/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png",
+    image: "/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png?v=20260929",
     images: [
-      "/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png",
+      "/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png?v=20260929",
       "/images/sathya nagar/1000038395.jpg",
       "/images/sathya nagar/1000038394.jpg",
       "/images/sathya nagar/1000038397.jpg",
