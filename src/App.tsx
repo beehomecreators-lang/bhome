@@ -153,7 +153,7 @@ export function App() {
         <span>Bee Home Creators</span>
       </div>
       {project ? (
-        <ProjectDetail project={project} onBack={goHome} />
+        <ProjectDetail key={project.id} project={project} onBack={goHome} />
       ) : path === "/team" || path === "/employees" ? (
         <TeamPage />
       ) : path === "/about" ? (
