@@ -21,6 +21,18 @@ export function Brand({ compact = false }: { compact?: boolean }) {
   );
 }
 
+function go(path: string, close?: () => void) {
+  if (window.location.pathname === path) {
+    if (path === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+    close?.();
+    return;
+  }
+  window.history.pushState({}, "", path);
+  window.dispatchEvent(new PopStateEvent("popstate"));
+  window.scrollTo(0, 0);
+  close?.();
+}
+
 export function Navigation({
   onMenu,
   transparent = false,
@@ -44,19 +56,19 @@ export function Navigation({
       <div className="container header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="/">Home</a>
-          <a href="/about">About Us</a>
+          <a href="/" onClick={(e) => { e.preventDefault(); go("/"); }}>Home</a>
+          <a href="/about" onClick={(e) => { e.preventDefault(); go("/about"); }}>About Us</a>
           <div className="nav-projects">
-            <a href="/#projects" className="nav-projects-trigger">Projects</a>
+            <a href="/#projects" className="nav-projects-trigger" onClick={(e) => { e.preventDefault(); go("/"); setTimeout(() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }), 0); }}>Projects</a>
             <div className="nav-projects-menu">
-              <a href="/kungumam-nagar">Kungumam Nagar</a>
-              <a href="/vasantham-avenue">Vasantham Avenue</a>
-              <a href="/shree-vellaiyammal-garden">Shree Vellaiyammal Garden</a>
-              <a href="/sathya-nagar">Sathya Nagar</a>
+              <a href="/kungumam-nagar" onClick={(e) => { e.preventDefault(); go("/kungumam-nagar"); }}>Kungumam Nagar</a>
+              <a href="/vasantham-avenue" onClick={(e) => { e.preventDefault(); go("/vasantham-avenue"); }}>Vasantham Avenue</a>
+              <a href="/shree-vellaiyammal-garden" onClick={(e) => { e.preventDefault(); go("/shree-vellaiyammal-garden"); }}>Shree Vellaiyammal Garden</a>
+              <a href="/sathya-nagar" onClick={(e) => { e.preventDefault(); go("/sathya-nagar"); }}>Sathya Nagar</a>
             </div>
           </div>
-          <a href="/team">Our Team</a>
-          <a href="/#contact">Contact</a>
+          <a href="/team" onClick={(e) => { e.preventDefault(); go("/team"); }}>Our Team</a>
+          <a href="/#contact" onClick={(e) => { e.preventDefault(); go("/"); setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 0); }}>Contact</a>
         </nav>
         <div className="header-actions">
           <a className="header-call" href={`tel:${PHONE}`}>
@@ -106,15 +118,15 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
         </button>
       </div>
       <nav>
-        <a href="/" onClick={onClose}>Home</a>
-        <a href="/about" onClick={onClose}>About Us</a>
+        <a href="/" onClick={(e) => { e.preventDefault(); go("/", onClose); }}>Home</a>
+        <a href="/about" onClick={(e) => { e.preventDefault(); go("/about", onClose); }}>About Us</a>
         <span className="mobile-projects-title">Projects</span>
-        <a href="/kungumam-nagar" onClick={onClose}>Kungumam Nagar</a>
-        <a href="/vasantham-avenue" onClick={onClose}>Vasantham Avenue</a>
-        <a href="/shree-vellaiyammal-garden" onClick={onClose}>Shree Vellaiyammal Garden</a>
-        <a href="/sathya-nagar" onClick={onClose}>Sathya Nagar</a>
-        <a href="/team" onClick={onClose}>Our Team</a>
-        <a href="/#contact" onClick={onClose}>Contact</a>
+        <a href="/kungumam-nagar" onClick={(e) => { e.preventDefault(); go("/kungumam-nagar", onClose); }}>Kungumam Nagar</a>
+        <a href="/vasantham-avenue" onClick={(e) => { e.preventDefault(); go("/vasantham-avenue", onClose); }}>Vasantham Avenue</a>
+        <a href="/shree-vellaiyammal-garden" onClick={(e) => { e.preventDefault(); go("/shree-vellaiyammal-garden", onClose); }}>Shree Vellaiyammal Garden</a>
+        <a href="/sathya-nagar" onClick={(e) => { e.preventDefault(); go("/sathya-nagar", onClose); }}>Sathya Nagar</a>
+        <a href="/team" onClick={(e) => { e.preventDefault(); go("/team", onClose); }}>Our Team</a>
+        <a href="/#contact" onClick={(e) => { e.preventDefault(); go("/", onClose); setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 0); }}>Contact</a>
       </nav>
       <a className="button button-gold" href={`tel:${PHONE}`}>
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
