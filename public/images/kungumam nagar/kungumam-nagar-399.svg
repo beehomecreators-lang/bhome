@@ -1,73 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1095 1437" role="img" aria-labelledby="title desc">
-<title id="title">Kungumam Nagar plots at 399 per sq.ft</title>
-<desc id="desc">Bee Home Creators promotional flyer for Kungumam Nagar.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1095 1436">
 <defs>
-  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a6"/><stop offset="0.38" stop-color="#d99b18"/><stop offset="0.7" stop-color="#ffdf68"/><stop offset="1" stop-color="#a96900"/></linearGradient>
-  <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c3155"/><stop offset="1" stop-color="#061a30"/></linearGradient>
-  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".25"/></filter>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff2a6"/><stop offset=".45" stop-color="#d79a16"/><stop offset="1" stop-color="#9a6508"/></linearGradient>
+<linearGradient id="n" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#123b64"/><stop offset="1" stop-color="#061b30"/></linearGradient>
 </defs>
-<rect width="1095" height="1437" fill="#f7f3e6"/>
-<rect x="0" y="0" width="1095" height="10" fill="url(#gold)"/>
-<g font-family="Arial, Helvetica, sans-serif" fill="#08264a">
-  <text x="44" y="92" font-size="30" font-weight="800">BEE HOME CREATORS</text>
-  <text x="47" y="122" font-size="14" letter-spacing="5" fill="#333">DREAMS TO REALITY</text>
-  <path d="M65 66 L95 34 L125 66 V104 L110 89 V57 L95 46 L80 57 V89 L65 104 Z" fill="none" stroke="#111" stroke-width="8"/>
-  <path d="M74 86 Q95 65 116 86 Q95 75 74 86Z" fill="url(#gold)" stroke="#111" stroke-width="5"/>
-
-  <rect x="228" y="59" width="804" height="190" fill="none" stroke="url(#gold)" stroke-width="4"/>
-  <text x="630" y="112" text-anchor="middle" font-size="48" font-weight="800">BEST TIME TO</text>
-  <text x="630" y="195" text-anchor="middle" font-size="76" font-weight="900" fill="#09294c" stroke="url(#gold)" stroke-width="3" paint-order="stroke">PURCHASE PLOTS</text>
-  <text x="630" y="242" text-anchor="middle" font-size="30" font-weight="700">at Kungumam Nagar</text>
+<rect width="1095" height="1436" fill="#fffdf5"/>
+<rect width="1095" height="8" fill="url(#g)"/>
+<g transform="translate(55 42)" font-family="Arial,Helvetica,sans-serif">
+<path d="M42 70L82 30l40 40v48H42z" fill="none" stroke="#101827" stroke-width="8"/>
+<path d="M52 85q30-28 60 0-30-12-60 0z" fill="url(#g)"/>
+<path d="M48 98q34-26 68 0" fill="none" stroke="#d79a16" stroke-width="10" stroke-linecap="round"/>
+<text x="-35" y="154" font-size="27" font-weight="800" fill="#101827">BEE <tspan fill="#d79a16">HOME</tspan> CREATORS</text>
+<text x="0" y="180" font-size="14" letter-spacing="5" fill="#263548">DREAMS TO REALITY</text>
 </g>
-
-<g filter="url(#shadow)">
-  <circle cx="548" cy="410" r="165" fill="url(#navy)" stroke="url(#gold)" stroke-width="22"/>
-  <circle cx="548" cy="410" r="139" fill="none" stroke="#f2cc52" stroke-width="3"/>
-  <text x="548" y="360" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#fff1ae">PRICE STARTS</text>
-  <text x="548" y="397" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#fff1ae">FROM JUST</text>
-  <text x="548" y="468" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" fill="url(#gold)">399/-</text>
-  <text x="548" y="515" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#fff1ae">PER SQ.FT</text>
+<rect x="222" y="62" width="810" height="184" fill="none" stroke="#d79a16" stroke-width="4"/>
+<text x="627" y="111" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="800" fill="#092b4e">BEST TIME TO</text>
+<text x="627" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="72" font-weight="900" fill="#0a2b4d" stroke="#d79a16" stroke-width="3" paint-order="stroke">PURCHASE PLOTS</text>
+<text x="627" y="232" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#092b4e">at unbeatable rates in fast growing neighborhoods</text>
+<g transform="translate(390 285)" font-family="Arial,Helvetica,sans-serif">
+<circle cx="220" cy="160" r="160" fill="url(#g)"/>
+<circle cx="220" cy="160" r="143" fill="url(#n)" stroke="#f4d66a" stroke-width="4"/>
+<text x="220" y="108" text-anchor="middle" font-size="28" font-weight="700" fill="#fff1ac">PRICE STARTS</text>
+<text x="220" y="143" text-anchor="middle" font-size="28" font-weight="700" fill="#fff1ac">FROM JUST</text>
+<text x="220" y="216" text-anchor="middle" font-size="78" font-weight="900" fill="#ffd34d">399/-</text>
+<text x="220" y="257" text-anchor="middle" font-size="27" font-weight="700" fill="#fff1ac">PER SQ.FT</text>
 </g>
-
-<g font-family="Arial, Helvetica, sans-serif" fill="#08264a">
-  <g font-size="45" font-weight="700">
-    <text x="75" y="715">✓</text><text x="125" y="715">Free Registration</text>
-    <text x="75" y="810">✓</text><text x="125" y="810">Free Patta</text>
-    <text x="75" y="905">✓</text><text x="125" y="905">1 Gram gold</text>
-  </g>
-  <g transform="translate(720 760)">
-    <rect x="0" y="70" width="270" height="170" rx="16" fill="#ceb27c" stroke="#a56b12" stroke-width="8" transform="skewY(-12)"/>
-    <g stroke="#9b6c1a" stroke-width="4" opacity=".8">
-      <path d="M25 110 L125 90 L230 118"/><path d="M35 155 L145 127 L250 160"/><path d="M45 205 L155 170 L238 196"/>
-      <path d="M80 88 L100 225"/><path d="M155 82 L170 207"/><path d="M210 95 L220 185"/>
-    </g>
-    <path d="M140 15 C96 15 70 48 70 91 C70 150 140 198 140 198 C140 198 210 150 210 91 C210 48 184 15 140 15Z" fill="url(#gold)" stroke="#8d5b0d" stroke-width="7"/>
-    <circle cx="140" cy="91" r="31" fill="#fff5c8" stroke="#8d5b0d" stroke-width="6"/>
-    <circle cx="140" cy="91" r="11" fill="#8d5b0d"/>
-  </g>
+<g font-family="Arial,Helvetica,sans-serif" fill="#0a2b4d" font-size="52" font-weight="700">
+<text x="80" y="725">✓</text><text x="130" y="725">Free Registration</text>
+<text x="80" y="825">✓</text><text x="130" y="825">Free Patta</text>
+<text x="80" y="925">✓</text><text x="130" y="925">1 Gram gold</text>
 </g>
-
-<rect x="0" y="1182" width="1095" height="255" fill="url(#navy)"/>
-<rect x="0" y="1173" width="1095" height="9" fill="url(#gold)"/>
-<g font-family="Arial, Helvetica, sans-serif">
-  <circle cx="75" cy="1274" r="42" fill="url(#gold)"/>
-  <path d="M54 1258c9 18 18 29 37 38l8-11c2-3 6-4 9-2l9 6c3 2 4 6 2 9l-7 10c-4 6-13 9-20 6-35-13-56-34-69-69-3-8 0-16 7-20l10-7c3-2 7-1 9 2l6 9c2 3 1 7-2 9z" fill="#08264a" transform="translate(10 0) scale(.8)"/>
-  <text x="130" y="1270" font-size="26" font-weight="700" fill="#f8d85f">CALL: <tspan fill="#fff">+91 6381905169</tspan></text>
-  <text x="130" y="1306" font-size="26" font-weight="700" fill="#f8d85f">CALL: <tspan fill="#fff">+91 6381895472</tspan></text>
-
-  <g transform="translate(472 1205)">
-    <rect width="150" height="150" fill="#fff"/>
-    <g fill="#111">
-      <path d="M10 10h40v40H10zM20 20h20v20H20zM100 10h40v40h-40zM110 20h20v20h-20zM10 100h40v40H10zM20 110h20v20H20z"/>
-      <path d="M65 12h8v8h-8zM78 25h8v8h-8zM58 38h8v8h-8zM65 58h8v8h-8zM80 55h18v8H80zM60 75h8v8h-8zM72 88h8v8h-8zM88 73h8v8h-8zM100 65h8v8h-8zM118 63h18v8h-18zM60 105h8v8h-8zM75 110h8v8h-8zM90 100h8v8h-8zM105 115h8v8h-8zM125 100h8v8h-8zM65 130h8v8h-8zM82 125h8v8h-8zM98 135h8v8h-8zM118 126h8v8h-8z"/>
-    </g>
-  </g>
-
-  <circle cx="800" cy="1274" r="42" fill="url(#gold)"/>
-  <path d="M800 1230c-20 0-36 16-36 36 0 28 36 57 36 57s36-29 36-57c0-20-16-36-36-36zm0 49c-8 0-14-6-14-14s6-14 14-14 14 6 14 14-6 14-14 14z" fill="#08264a"/>
-  <text x="850" y="1260" font-size="21" font-weight="800" fill="#f8d85f">LOCATION:</text>
-  <text x="850" y="1295" font-size="23" fill="#fff">Kungumam Nagar</text>
-  <text x="850" y="1328" font-size="23" fill="#fff">Trichy</text>
-  <text x="548" y="1403" text-anchor="middle" font-size="18" letter-spacing="5" fill="#fff1ae">YOUR LAND • YOUR FUTURE</text>
+<g transform="translate(730 770)">
+<rect x="0" y="75" width="270" height="180" rx="18" fill="#d2b77f" stroke="#9a6b16" stroke-width="6" transform="rotate(-6 135 165)"/>
+<path d="M25 205l55-70 65 55 55-80 55 75" fill="none" stroke="#f1df9e" stroke-width="6"/>
+<path d="M40 125l50 55 70-65 50 55 40-30" fill="none" stroke="#f1df9e" stroke-width="5"/>
+<path d="M140 20c-36 0-58 23-58 60 0 45 58 94 58 94s58-49 58-94c0-37-22-60-58-60z" fill="url(#g)" stroke="#86590c" stroke-width="6"/>
+<circle cx="140" cy="80" r="20" fill="#08284a"/><circle cx="140" cy="80" r="8" fill="#fff"/>
+</g>
+<rect y="1160" width="1095" height="276" fill="url(#n)"/>
+<rect y="1150" width="1095" height="10" fill="url(#g)"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<circle cx="88" cy="1280" r="45" fill="url(#g)"/><text x="58" y="1292" font-size="44" fill="#08264a">☎</text>
+<text x="150" y="1268" font-size="25" font-weight="800" fill="#f8d75c">CALL: <tspan fill="#fff">+91 6381905169</tspan></text>
+<text x="150" y="1308" font-size="25" font-weight="800" fill="#f8d75c">CALL: <tspan fill="#fff">+91 6381895472</tspan></text>
+<rect x="474" y="1202" width="147" height="147" fill="#fff"/>
+<g fill="#000">
+<path d="M484 1212h42v42h-42zM495 1223h20v20h-20zM579 1212h42v42h-42zM590 1223h20v20h-20zM484 1297h42v42h-42zM495 1308h20v20h-20z"/>
+<path d="M536 1212h8v8h-8zM550 1226h8v8h-8zM564 1240h8v8h-8zM536 1254h8v8h-8zM550 1268h16v8h-16zM536 1282h8v8h-8zM550 1296h8v8h-8zM564 1310h8v8h-8zM579 1260h8v8h-8zM593 1274h8v8h-8zM607 1288h8v8h-8zM579 1302h8v8h-8zM607 1320h8v8h-8z"/>
+</g>
+<rect x="466" y="1194" width="163" height="163" fill="none" stroke="#d79a16" stroke-width="3"/>
+<circle cx="806" cy="1275" r="45" fill="url(#g)"/>
+<path d="M806 1238c-18 0-32 14-32 32 0 24 32 52 32 52s32-28 32-52c0-18-14-32-32-32z" fill="#08264a"/><circle cx="806" cy="1270" r="10" fill="#fff2b0"/>
+<text x="860" y="1259" font-size="21" font-weight="800" fill="#f8d75c">LOCATION:</text>
+<text x="860" y="1294" font-size="23" fill="#fff">TNPL Nearby Trichy</text>
+<text x="860" y="1327" font-size="23" fill="#fff">To Dindigul Bypass</text>
 </g>
 </svg>
