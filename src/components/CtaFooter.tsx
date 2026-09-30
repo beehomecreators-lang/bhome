@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { PHONE } from "../data/content";
+import adminData from "../data/adminData.json";
 
 export function CtaSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -95,15 +96,15 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-label">Visit us</span>
-          <p>49 Madhavan Salai,<br />K.K. Nagar, Trichy - 620021</p>
+          <p>{adminData.site.address[0]}<br />{adminData.site.address[1]}</p>
         </div>
         <div>
           <span className="footer-label">Talk to us</span>
-          <a href={`tel:${PHONE}`}>+91 63818 95472</a>
+          <a href={`tel:${PHONE}`}>{adminData.site.phoneDisplay}</a>
           <a href={`https://wa.me/${PHONE}`} target="_blank" rel="noreferrer">
             WhatsApp our team
           </a>
-          <a href="mailto:beehomecreators@gmail.com">
+          <a href="mailto:{adminData.site.email}">
             beehomecreators@gmail.com
           </a>
         </div>
@@ -111,7 +112,7 @@ export function Footer() {
           <span className="footer-label">Follow along</span>
           <div>
             <a
-              href="https://www.instagram.com/beehomecreators?igsh=cWxiMTd6OGtoeDZ4"
+              href="{adminData.site.instagramUrl}"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
@@ -123,7 +124,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.facebook.com/share/19ANeW5idu/"
+              href="{adminData.site.facebookUrl}"
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
@@ -141,7 +142,7 @@ export function Footer() {
         <small>Website created by x.jeswin</small>
       </div>
       <div className="container footer-compliance">
-        <p>DTCP APPROVED PLOTS AND RERA REGISTERED PROJECT</p>
+        <p>{adminData.site.complianceText}</p>
       </div>
     </footer>
   );
