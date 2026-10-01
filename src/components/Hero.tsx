@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { PHONE, projects } from "../data/content";
+import adminData from "../data/adminData.json";
 
 export function Hero({ onExplore }: { onExplore: () => void }) {
   const root = useRef<HTMLDivElement>(null);
@@ -76,15 +77,14 @@ export function Hero({ onExplore }: { onExplore: () => void }) {
         <div className="hero-content">
           <div className="hero-kicker">
             <span className="kicker-line" />
-            Trusted land partners in Trichy
+            {adminData.site.heroKicker}
           </div>
           <h1 className="hero-title">
-            <span className="hero-title-line">Find a place to</span>
-            <span className="hero-title-line hero-title-accent">put down roots.</span>
+            <span className="hero-title-line">{adminData.site.heroTitleLine1}</span>
+            <span className="hero-title-line hero-title-accent">{adminData.site.heroTitleLine2}</span>
           </h1>
           <p className="hero-desc">
-            Thoughtfully selected residential plots for families building their
-            next chapter — with clarity, care, and a future-facing point of view.
+            {adminData.site.heroDescription}
           </p>
           <div className="hero-actions">
             <button className="button button-gold hero-cta" onClick={onExplore}>
@@ -127,7 +127,7 @@ export function Hero({ onExplore }: { onExplore: () => void }) {
         <div className="hero-visual">
           <div className="hero-visual-inner">
             <img
-              src="/images/vasantham avenue/Gemini_Generated_Image_ahvqlzahvqlzahvq.png"
+              src={adminData.site.heroImage}
               alt="Vasantham Avenue residential plots"
               data-cursor="image"
               data-cursor-label="Preview"

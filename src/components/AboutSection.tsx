@@ -1,3 +1,5 @@
+import adminData from "../data/adminData.json";
+
 export function AboutSection() {
   return (
     <section className="about-section" id="about">
@@ -6,15 +8,14 @@ export function AboutSection() {
           <div>
             <div className="kicker">
               <span className="kicker-line" />
-              About us
+              {adminData.site.aboutKicker}
             </div>
             <h2 className="section-title">
               About <em>Bee Home Creators.</em>
             </h2>
           </div>
           <p className="section-desc">
-            A growing real estate company focused on quality residential spaces,
-            reliable property solutions, and long-term customer relationships.
+            {adminData.site.aboutDescription}
           </p>
         </div>
 
@@ -22,27 +23,19 @@ export function AboutSection() {
           <div className="about-copy">
             <h3>About Bee Home Creators</h3>
             <p>
-              Bee Home Creators is a growing real estate company committed to
-              creating quality living spaces and providing reliable property
-              solutions for individuals and families. We focus on thoughtfully
-              planned residential projects, strategic locations, quality
-              development, essential amenities, and customer satisfaction.
+              {adminData.site.aboutBody[0]}
             </p>
             <p>
-              Our goal is to make property ownership a smooth and trustworthy
-              experience by maintaining transparency, professional service, and
-              strong customer relationships.
+              {adminData.site.aboutBody[1]}
             </p>
             <p>
-              At Bee Home Creators, we believe that a home is more than a
-              property—it is a place where people build their lives, memories,
-              and future.
+              {adminData.site.aboutBody[2]}
             </p>
 
             <div className="about-address">
               <span className="panel-kicker">Company location</span>
               <strong>Bee Home Creators</strong>
-              <p>49, Madhavan Salai, KK Nagar,<br />Trichy – 620021, Tamil Nadu, India</p>
+              <p>{adminData.site.companyLocation}</p>
             </div>
           </div>
 
@@ -50,25 +43,22 @@ export function AboutSection() {
             <article className="leadership-card">
               <span className="panel-kicker">Leadership</span>
               <div className="leadership-avatar">RS</div>
-              <h3>Ranjith Sakthivel</h3>
-              <p>General Manager &amp; Owner</p>
+              <h3>{adminData.site.ownerName}</h3>
+              <p>{adminData.site.ownerTitle}</p>
               <small>Bee Home Creators</small>
             </article>
 
             <div className="vision-card">
               <span className="panel-kicker">Our Vision</span>
               <p>
-                To become a trusted and respected name in the real estate
-                industry by creating quality residential spaces and delivering
-                lasting value to our customers.
+                {adminData.site.vision}
               </p>
             </div>
 
             <div className="vision-card">
               <span className="panel-kicker">Our Mission</span>
               <p>
-                To develop well-planned properties with quality, convenience,
-                connectivity, and customer-focused service.
+                {adminData.site.mission}
               </p>
             </div>
           </div>

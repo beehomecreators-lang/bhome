@@ -14,6 +14,7 @@ import { SignatureProjectsSection } from "./components/SignatureProjectsSection"
 import { TeamPage } from "./components/TeamPage";
 import { AboutPage } from "./components/AboutPage";
 import { Lightbox } from "./components/Lightbox";
+import { AdminPage } from "./components/AdminPage";
 
 export function App() {
   const [path, setPath] = useState(window.location.pathname);
