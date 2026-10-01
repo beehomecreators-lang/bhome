@@ -252,7 +252,8 @@ const styles:Record<string,React.CSSProperties>={
   grid:{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))",gap:14},
   project:{textAlign:"left",background:"#fff",border:"1px solid #e2dfd7",borderRadius:14,padding:10,display:"flex",gap:12,alignItems:"center",cursor:"pointer"},
   thumb:{width:80,height:70,objectFit:"cover",borderRadius:9,background:"#eee"}, add:{marginTop:16,border:"1px dashed #b8ae9c",background:"transparent",borderRadius:12,padding:14,cursor:"pointer",display:"inline-flex",gap:8,alignItems:"center"},
-  backBtn:{border:0;background:"transparent",display:"flex",gap:7,alignItems:"center",cursor:"pointer",padding:0,color:"#6d675d"}, subhead:{fontWeight:800,marginTop:8},
+  "backBtn":{border:0,background:"transparent",display:"flex",gap:7,alignItems:"center",cursor:"pointer",padding:0,color:"#6d675d"},
+  "subhead":{fontWeight:800,marginTop:8},
   galleryRow:{display:"grid",gridTemplateColumns:"70px 1fr auto",gap:8,alignItems:"center"}, galleryThumb:{width:70,height:55,objectFit:"cover",borderRadius:7},
   imageBox:{border:"1px dashed #cfc9bd",borderRadius:12,padding:12,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}, preview:{width:180,height:110,objectFit:"cover",borderRadius:8}, upload:{display:"inline-flex",gap:7,alignItems:"center",background:"#f1eee8",padding:"10px 12px",borderRadius:9,cursor:"pointer"}
 };
