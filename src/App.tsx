@@ -179,7 +179,7 @@ export function App() {
           <Footer />
         </>
       )}
-      <a href="/admin" aria-label="Admin panel" style={{position:"fixed",right:14,bottom:14,zIndex:1000,width:42,height:42,borderRadius:"50%",background:"#1f241f",color:"#fff",display:"grid",placeItems:"center",textDecoration:"none",fontSize:20,boxShadow:"0 8px 24px rgba(0,0,0,.2)"}}>🐝</a>      {zoomImage && (
+      <a href="/admin" aria-label="Admin panel" style={{position:"fixed",right:14,top:14,zIndex:1000,width:42,height:42,borderRadius:"50%",background:"#1f241f",color:"#fff",display:"grid",placeItems:"center",textDecoration:"none",fontSize:20,boxShadow:"0 8px 24px rgba(0,0,0,.2)"}}>🐝</a>      {zoomImage && (
         <Lightbox
           src={zoomImage.src}
           alt={zoomImage.alt}
