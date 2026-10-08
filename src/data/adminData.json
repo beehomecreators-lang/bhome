@@ -3,7 +3,10 @@
     "phone": "+916381895472",
     "phoneDisplay": "+91 63818 95472",
     "email": "beehomecreators@gmail.com",
-    "address": ["49 Madhavan Salai,","K.K. Nagar, Trichy - 620021"],
+    "address": [
+      "49 Madhavan Salai,",
+      "K.K. Nagar, Trichy - 620021"
+    ],
     "instagramUrl": "https://www.instagram.com/beehomecreators?igsh=cWxiMTd6OGtoeDZ4",
     "facebookUrl": "https://www.facebook.com/share/19ANeW5idu/",
     "complianceText": "DTCP APPROVED PLOTS AND RERA REGISTERED PROJECT",
@@ -15,7 +18,11 @@
     "aboutKicker": "About us",
     "aboutTitle": "About Bee Home Creators.",
     "aboutDescription": "A growing real estate company focused on quality residential spaces, reliable property solutions, and long-term customer relationships.",
-    "aboutBody": ["Bee Home Creators is a growing real estate company committed to creating quality living spaces and providing reliable property solutions for individuals and families. We focus on thoughtfully planned residential projects, strategic locations, quality development, essential amenities, and customer satisfaction.","Our goal is to make property ownership a smooth and trustworthy experience by maintaining transparency, professional service, and strong customer relationships.","At Bee Home Creators, we believe that a home is more than a property—it is a place where people build their lives, memories, and future."],
+    "aboutBody": [
+      "Bee Home Creators is a growing real estate company committed to creating quality living spaces and providing reliable property solutions for individuals and families. We focus on thoughtfully planned residential projects, strategic locations, quality development, essential amenities, and customer satisfaction.",
+      "Our goal is to make property ownership a smooth and trustworthy experience by maintaining transparency, professional service, and strong customer relationships.",
+      "At Bee Home Creators, we believe that a home is more than a property—it is a place where people build their lives, memories, and future."
+    ],
     "vision": "To become a trusted and respected name in the real estate industry by creating quality residential spaces and delivering lasting value to our customers.",
     "mission": "To develop well-planned properties with quality, convenience, connectivity, and customer-focused service.",
     "ownerName": "Ranjith Sakthivel",
@@ -23,12 +30,233 @@
     "companyLocation": "49, Madhavan Salai, KK Nagar, Trichy – 620021, Tamil Nadu, India"
   },
   "projects": [
-    {"id":"sre-vasantham-avenue","name":"Vasantham Avenue","type":"Residential Plots","price":"₹888","location":"Vasantham Avenue","mapsUrl":"https://maps.app.goo.gl/Ugq7GX4cSrfxzTJt8","image":"/images/vasantham avenue/vasantham-avenue-888.jpg","images":["/images/vasantham avenue/vasantham-avenue-888.jpg","/images/vasantham avenue/plot-view-1.jpg","/images/vasantham avenue/Gemini_Generated_Image_x72vp6x72vp6x72v.png","/images/vasantham avenue/plot-view-2.jpg","/images/vasantham avenue/plot-view-3.jpg","/images/vasantham avenue/plot-view-4.jpg","/images/vasantham avenue/plot-view-5.jpg"],"whatsappMessage":"Hello Bee Home Creators, I am interested in Vasantham Avenue. I would like to know more details about the plots.","offers":["Free registration","Free 1 gram gold"],"landmarks":["Alampatti Pudur nearby","Trichy to Dindigul Bypass"]},
-    {"id":"kungumam-nagar","name":"Kungumam Nagar","type":"Residential Plots","price":"₹399","location":"Kungumam Nagar","mapsUrl":"https://maps.app.goo.gl/UzvvgJTmCTJecBH89","image":"/images/kungumam nagar/kungumam-nagar-main..png?v=20261001","images":["/images/kungumam nagar/kungumam-nagar-main..png?v=20261001","/images/kungumam nagar/plot-real-view-1.jpg","/images/kungumam nagar/plot-real-view-2.jpg","/images/kungumam nagar/plot-real-view-3.jpg","/images/kungumam nagar/plot-real-view-4.jpg","/images/kungumam nagar/plot-real-view-5.jpg"],"whatsappMessage":"Hello Bee Home Creators, I am interested in Kungumam Nagar. I would like to know more details about the plots.","offers":["Free registration","1 gram gold"],"landmarks":["TNPL nearby","Trichy to Dindigul Bypass"]},
-    {"id":"sri-vellaiyammal-garden-69","name":"Sri Vellaiyammal Garden - 69","type":"Residential Plots","price":"₹2999","location":"Madakkudi","mapsUrl":"https://maps.app.goo.gl/86xqX8JYDwZU9hSw8","image":"/images/Sri vellaiyammal garden-69/1000035270.jpg","images":["/images/Sri vellaiyammal garden-69/1000035270.jpg"],"whatsappMessage":"Hello Bee Home Creators, I am interested in Sri Vellaiyammal Garden - 69. I would like to know more details about the plots.","landmarks":["Near Trichy tollgate","Nearby school facility","Nearby hospital facility","Trichy to Chennai Bypass, Chidambaram Highway"]},
-    {"id":"sathya-nagar","name":"Sathya Nagar","type":"Premium Plots","price":"₹599","location":"Sathya Nagar","mapsUrl":"","image":"/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png?v=20260929","images":["/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png?v=20260929","/images/sathya nagar/1000038395.jpg","/images/sathya nagar/1000038394.jpg","/images/sathya nagar/1000038397.jpg","/images/sathya nagar/1000038393.jpg"],"whatsappMessage":"Hello Bee Home Creators, I am interested in Sathya Nagar. I would like to know more details about the plots.","offers":["Special opening price","Free patta","Free documentation"],"landmarks":["8 KM from JJ College","3.5 KM from Inamkulathur","7 KM from Viralimalai"]}
+    {
+      "id": "sre-vasantham-avenue",
+      "name": "Vasantham Avenue",
+      "type": "Residential Plots",
+      "price": "₹888",
+      "location": "Vasantham Avenue",
+      "mapsUrl": "https://maps.app.goo.gl/Ugq7GX4cSrfxzTJt8",
+      "image": "/images/vasantham avenue/vasantham-avenue-888.jpg",
+      "images": [
+        "/images/vasantham avenue/vasantham-avenue-888.jpg",
+        "/images/vasantham avenue/plot-view-1.jpg",
+        "/images/vasantham avenue/Gemini_Generated_Image_x72vp6x72vp6x72v.png",
+        "/images/vasantham avenue/plot-view-2.jpg",
+        "/images/vasantham avenue/plot-view-3.jpg",
+        "/images/vasantham avenue/plot-view-4.jpg",
+        "/images/vasantham avenue/plot-view-5.jpg"
+      ],
+      "whatsappMessage": "Hello Bee Home Creators, I am interested in Vasantham Avenue. I would like to know more details about the plots.",
+      "offers": [
+        "Free registration",
+        "Free 1 gram gold"
+      ],
+      "landmarks": [
+        "Alampatti Pudur nearby",
+        "Trichy to Dindigul Bypass"
+      ]
+    },
+    {
+      "id": "kungumam-nagar",
+      "name": "Kungumam Nagar",
+      "type": "Residential Plots",
+      "price": "₹399",
+      "location": "Kungumam Nagar",
+      "mapsUrl": "https://maps.app.goo.gl/UzvvgJTmCTJecBH89",
+      "image": "/images/kungumam nagar/kungumam-nagar-main..png?v=20261001",
+      "images": [
+        "/images/kungumam nagar/kungumam-nagar-main..png?v=20261001",
+        "/images/kungumam nagar/plot-real-view-1.jpg",
+        "/images/kungumam nagar/plot-real-view-2.jpg",
+        "/images/kungumam nagar/plot-real-view-3.jpg",
+        "/images/kungumam nagar/plot-real-view-4.jpg",
+        "/images/kungumam nagar/plot-real-view-5.jpg"
+      ],
+      "whatsappMessage": "Hello Bee Home Creators, I am interested in Kungumam Nagar. I would like to know more details about the plots.",
+      "offers": [
+        "Free registration",
+        "1 gram gold"
+      ],
+      "landmarks": [
+        "TNPL nearby",
+        "Trichy to Dindigul Bypass"
+      ]
+    },
+    {
+      "id": "sri-vellaiyammal-garden-69",
+      "name": "Sri Vellaiyammal Garden - 69",
+      "type": "Residential Plots",
+      "price": "₹2999",
+      "location": "Madakkudi",
+      "mapsUrl": "https://maps.app.goo.gl/86xqX8JYDwZU9hSw8",
+      "image": "/images/Sri vellaiyammal garden-69/1000035270.jpg",
+      "images": [
+        "/images/Sri vellaiyammal garden-69/1000035270.jpg"
+      ],
+      "whatsappMessage": "Hello Bee Home Creators, I am interested in Sri Vellaiyammal Garden - 69. I would like to know more details about the plots.",
+      "landmarks": [
+        "Near Trichy tollgate",
+        "Nearby school facility",
+        "Nearby hospital facility",
+        "Trichy to Chennai Bypass, Chidambaram Highway"
+      ]
+    },
+    {
+      "id": "sathya-nagar",
+      "name": "Sathya Nagar",
+      "type": "Premium Plots",
+      "price": "₹599",
+      "location": "Sathya Nagar",
+      "mapsUrl": "",
+      "image": "/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png?v=20260929",
+      "images": [
+        "/images/sathya nagar/Gemini_Generated_Image_ezu2muezu2muezu2.png?v=20260929",
+        "/images/sathya nagar/1000038395.jpg",
+        "/images/sathya nagar/1000038394.jpg",
+        "/images/sathya nagar/1000038397.jpg",
+        "/images/sathya nagar/1000038393.jpg"
+      ],
+      "whatsappMessage": "Hello Bee Home Creators, I am interested in Sathya Nagar. I would like to know more details about the plots.",
+      "offers": [
+        "Special opening price",
+        "Free patta",
+        "Free documentation"
+      ],
+      "landmarks": [
+        "8 KM from JJ College",
+        "3.5 KM from Inamkulathur",
+        "7 KM from Viralimalai"
+      ]
+    }
   ],
   "teamMembers": [
-    {"id":"EMP-001","name":"Ashok. A","designation":"Marketing Manager","mobile":"9363131514"},{"id":"EMP-002","name":"Hema","designation":"Marketing Executive","mobile":"9095094896"},{"id":"EMP-003","name":"P.Ambiga","designation":"Marketing Executive","mobile":"7010309238"},{"id":"EMP-004","name":"F. Akthar","designation":"Tele Caller","mobile":"9791450167"},{"id":"EMP-005","name":"S. Nathiya Selvam","designation":"Marketing Executive","mobile":"8190916276"},{"id":"EMP-006","name":"B. Shyamala","designation":"Marketing Manager","mobile":"8838382436"},{"id":"EMP-007","name":"Lavanya","designation":"Tele Caller","mobile":"6379461121"},{"id":"EMP-008","name":"Subash","designation":"Marketing Executive","mobile":"7358541909"},{"id":"EMP-009","name":"R. Shifana","designation":"Tele Caller","mobile":"9363195680"},{"id":"EMP-010","name":"X. Jeswin","designation":"Digital Marketing Manager","mobile":"9600560696"},{"id":"EMP-011","name":"Leena Renu","designation":"Admin","mobile":"6381895472"},{"id":"EMP-012","name":"Amala","designation":"Operator","mobile":"6381905169"},{"id":"EMP-013","name":"Mohamed Thameem.M","designation":"HR","mobile":"7708603403"},{"id":"EMP-014","name":"T. Sanjay","designation":"Graphic Designer","mobile":"9894472003"}
+    {
+      "id": "EMP-001",
+      "name": "Ashok. A",
+      "designation": "Marketing Manager",
+      "mobile": "9363131514"
+    },
+    {
+      "id": "EMP-002",
+      "name": "Hema",
+      "designation": "Marketing Executive",
+      "mobile": "9095094896"
+    },
+    {
+      "id": "EMP-003",
+      "name": "P.Ambiga",
+      "designation": "Marketing Executive",
+      "mobile": "7010309238"
+    },
+    {
+      "id": "EMP-004",
+      "name": "F. Akthar",
+      "designation": "Tele Caller",
+      "mobile": "9791450167"
+    },
+    {
+      "id": "EMP-005",
+      "name": "S. Nathiya Selvam",
+      "designation": "Marketing Executive",
+      "mobile": "8190916276"
+    },
+    {
+      "id": "EMP-006",
+      "name": "B. Shyamala",
+      "designation": "Marketing Manager",
+      "mobile": "8838382436"
+    },
+    {
+      "id": "EMP-007",
+      "name": "Lavanya",
+      "designation": "Tele Caller",
+      "mobile": "6379461121"
+    },
+    {
+      "id": "EMP-008",
+      "name": "Subash",
+      "designation": "Marketing Executive",
+      "mobile": "7358541909"
+    },
+    {
+      "id": "EMP-009",
+      "name": "R. Shifana",
+      "designation": "Tele Caller",
+      "mobile": "9363195680"
+    },
+    {
+      "id": "EMP-010",
+      "name": "X. Jeswin",
+      "designation": "Digital Marketing Manager",
+      "mobile": "9600560696"
+    },
+    {
+      "id": "EMP-011",
+      "name": "Leena Renu",
+      "designation": "Admin",
+      "mobile": "6381895472"
+    },
+    {
+      "id": "EMP-012",
+      "name": "Amala",
+      "designation": "Operator",
+      "mobile": "6381905169"
+    },
+    {
+      "id": "EMP-013",
+      "name": "Mohamed Thameem.M",
+      "designation": "HR",
+      "mobile": "7708603403"
+    },
+    {
+      "id": "EMP-014",
+      "name": "T. Sanjay",
+      "designation": "Graphic Designer",
+      "mobile": "9894472003"
+    }
+  ],
+  "careers": [
+    {
+      "id": "business-executive",
+      "title": "Business Executive",
+      "location": "Trichy, Tamil Nadu",
+      "description": "Join Bee Home Creators and help customers find the right property for their future.",
+      "responsibilities": [
+        "Handle customer enquiries and follow-ups",
+        "Promote our residential projects and offers",
+        "Arrange and coordinate site visits",
+        "Build strong customer relationships",
+        "Achieve monthly sales targets"
+      ],
+      "requirements": [
+        "Good communication skills",
+        "Basic Tamil and English",
+        "Sales or real-estate experience preferred",
+        "Freshers can apply"
+      ],
+      "active": true
+    },
+    {
+      "id": "sales-executive",
+      "title": "Sales Executive",
+      "location": "Trichy, Tamil Nadu",
+      "description": "Build new leads, guide prospects through our projects and convert opportunities into bookings.",
+      "responsibilities": [
+        "Generate new leads",
+        "Explain project details and offers",
+        "Follow up with prospects",
+        "Conduct or coordinate site visits",
+        "Convert prospects into bookings",
+        "Achieve monthly targets"
+      ],
+      "requirements": [
+        "Good communication skills",
+        "Basic Tamil and English",
+        "Sales experience preferred",
+        "Freshers with a positive attitude can apply"
+      ],
+      "active": true
+    }
   ]
 }
