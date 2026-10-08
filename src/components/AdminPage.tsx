@@ -30,7 +30,7 @@ type Data = {
     ownerName: string; ownerTitle: string; companyLocation: string;
   };
   projects: Project[];
-  teamMembers: TeamMember[];\n  careers: Career[];
+  teamMembers: TeamMember[];  careers: Career[];
 };
 
 const emptyProject: Project = {
@@ -47,7 +47,7 @@ export function AdminPage() {
   const [tab, setTab] = useState<"home" | "projects" | "about" | "team" | "contact" | "careers" | "applications">("projects");
   const [selected, setSelected] = useState<string | null>(null);
   const [status, setStatus] = useState("");
-  const [busy, setBusy] = useState(false);\n  const [applications, setApplications] = useState<Application[]>([]);
+  const [busy, setBusy] = useState(false);  const [applications, setApplications] = useState<Application[]>([]);
 
   const load = async () => {
     const r = await fetch("/api/admin/content", { credentials: "include" });
@@ -55,6 +55,11 @@ export function AdminPage() {
       setData(await r.json());
       setLoggedIn(true);
     } else setLoggedIn(false);
+  };
+
+  const loadApplications = async () => {
+    const r = await fetch("/api/admin/applications", { credentials: "include" });
+    if (r.ok) setApplications(await r.json());
   };
 
   useEffect(() => { load().catch(() => setLoggedIn(false)); }, []);
@@ -118,7 +123,7 @@ export function AdminPage() {
         {tab === "home" && <HomeEditor data={data} setData={setData} onImage={async (file)=>uploadImage(file,setData,data,setBusy,setStatus)} />}
         {tab === "about" && <AboutEditor data={data} setData={setData} />}
         {tab === "contact" && <ContactEditor data={data} setData={setData} />}
-        {tab === "team" && <TeamEditor data={data} setData={setData} />}\n        {tab === "careers" && <CareersEditor data={data} setData={setData} />}\n        {tab === "applications" && <ApplicationsEditor applications={applications} />}
+        {tab === "team" && <TeamEditor data={data} setData={setData} />}        {tab === "careers" && <CareersEditor data={data} setData={setData} />}        {tab === "applications" && <ApplicationsEditor applications={applications} onRefresh={loadApplications} />}
         {tab === "projects" && (
           project
             ? <ProjectEditor project={project} data={data} setData={setData} onBack={()=>setSelected(null)} onImage={async (file)=>uploadImage(file,setData,data,setBusy,setStatus)} />
@@ -206,8 +211,8 @@ function ProjectEditor({project,data,setData,onBack,onImage}:{project:Project;da
     <div style={styles.subhead}>Gallery</div>
     {project.images.map((img,i)=><div key={img+i} style={styles.galleryRow}><img src={img} style={styles.galleryThumb}/><input style={styles.input} value={img} onChange={e=>update({images:project.images.map((x,j)=>j===i?e.target.value:x)})}/><button style={styles.danger} onClick={()=>update({images:project.images.filter((_,j)=>j!==i)})}><Trash2 size={15}/></button></div>)}
     <button style={styles.secondary} onClick={async()=>{const input=document.createElement("input");input.type="file";input.accept="image/*";input.onchange=async()=>{if(input.files?.[0])update({images:[...project.images,await onImage(input.files[0])]})};input.click();}}><ImagePlus size={16}/> Add image</button>
-    <TextArea label="Offers (one per line)" value={(project.offers||[]).join("\n")} onChange={v=>update({offers:v.split("\n").map(x=>x.trim()).filter(Boolean)})}/>
-    <TextArea label="Landmarks (one per line)" value={project.landmarks.join("\n")} onChange={v=>update({landmarks:v.split("\n").map(x=>x.trim()).filter(Boolean)})}/>
+    <TextArea label="Offers (one per line)" value={(project.offers||[]).join("")} onChange={v=>update({offers:v.split("").map(x=>x.trim()).filter(Boolean)})}/>
+    <TextArea label="Landmarks (one per line)" value={project.landmarks.join("")} onChange={v=>update({landmarks:v.split("").map(x=>x.trim()).filter(Boolean)})}/>
     <div style={{display:"flex",justifyContent:"flex-end",marginTop:18}}><button style={styles.danger} onClick={()=>{if(confirm("Delete this project?")){setData(d=>d?({...d,projects:d.projects.filter(x=>x.id!==project.id)}):d);onBack();}}}><Trash2 size={16}/> Delete project</button></div>
   </section>;
 }
@@ -218,6 +223,38 @@ function Field({label,value,onChange}:{label:string;value:string;onChange:(v:str
 function TextArea({label,value,onChange}:{label:string;value:string;onChange:(v:string)=>void}) {
   return <label style={styles.field}><span>{label}</span><textarea style={{...styles.input,minHeight:100,resize:"vertical"}} value={value} onChange={e=>onChange(e.target.value)}/></label>;
 }
+function CareersEditor({data,setData}:{data:Data;setData:React.Dispatch<React.SetStateAction<Data|null>>}) {
+  return <section style={styles.card}>
+    {data.careers.map((c,i)=><div key={c.id} style={{...styles.card,border:"1px solid #e2dfd7",boxShadow:"none"}}>
+      <Field label="Job title" value={c.title} onChange={v=>setData(d=>d?({...d,careers:d.careers.map((x,j)=>j===i?{...x,title:v}:x)}):d)}/>
+      <Field label="Location" value={c.location} onChange={v=>setData(d=>d?({...d,careers:d.careers.map((x,j)=>j===i?{...x,location:v}:x)}):d)}/>
+      <TextArea label="Description" value={c.description} onChange={v=>setData(d=>d?({...d,careers:d.careers.map((x,j)=>j===i?{...x,description:v}:x)}):d)}/>
+      <TextArea label="Responsibilities (one per line)" value={c.responsibilities.join("\n")} onChange={v=>setData(d=>d?({...d,careers:d.careers.map((x,j)=>j===i?{...x,responsibilities:v.split("\n").map(s=>s.trim()).filter(Boolean)}:x)}):d)}/>
+      <TextArea label="Requirements (one per line)" value={c.requirements.join("\n")} onChange={v=>setData(d=>d?({...d,careers:d.careers.map((x,j)=>j===i?{...x,requirements:v.split("\n").map(s=>s.trim()).filter(Boolean)}:x)}):d)}/>
+      <label style={styles.field}><span>Show this opening</span><input type="checkbox" checked={c.active} onChange={e=>setData(d=>d?({...d,careers:d.careers.map((x,j)=>j===i?{...x,active:e.target.checked}:x)}):d)} /></label>
+      <button style={styles.danger} onClick={()=>setData(d=>d?({...d,careers:d.careers.filter(x=>x.id!==c.id)}):d)}><Trash2 size={15}/> Delete opening</button>
+    </div>)}
+    <button style={styles.secondary} onClick={()=>setData(d=>d?({...d,careers:[...d.careers,{id:"job-"+Date.now(),title:"New position",location:"Trichy, Tamil Nadu",description:"",responsibilities:[],requirements:[],active:true}]}):d)}><Plus size={16}/> Add opening</button>
+  </section>;
+}
+
+function ApplicationsEditor({applications,onRefresh}:{applications:Application[];onRefresh:()=>Promise<void>}) {
+  useEffect(()=>{ onRefresh().catch(()=>{}); },[]);
+  return <section style={styles.card}>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12}}>
+      <div><strong>Job applications</strong><div style={{color:"#777",fontSize:13,marginTop:4}}>{applications.length} application(s)</div></div>
+      <button style={styles.secondary} onClick={()=>onRefresh()}><Upload size={16}/> Refresh</button>
+    </div>
+    {applications.length===0 ? <div style={{color:"#777"}}>No applications yet.</div> :
+      applications.map(a=><div key={a.id} style={{border:"1px solid #e2dfd7",borderRadius:12,padding:16}}>
+        <strong>{a.name}</strong><div style={{marginTop:5}}>{a.job_title}</div>
+        <div style={{color:"#666",fontSize:13,marginTop:5}}>{a.phone}{a.email ? " · "+a.email : ""}</div>
+        {a.message && <p style={{whiteSpace:"pre-wrap",color:"#555"}}>{a.message}</p>}
+        <small style={{color:"#888"}}>{new Date(a.created_at).toLocaleString()}</small>
+      </div>)}
+  </section>;
+}
+
 function ImageField({label,value,onChange}:{label:string;value:string;onChange:(f:File)=>Promise<void>}) {
   return <div style={styles.field}><span>{label}</span><div style={styles.imageBox}>{value && <img src={value} alt="" style={styles.preview}/>}<label style={styles.upload}><Upload size={16}/> Replace image<input type="file" accept="image/*" hidden onChange={e=>e.target.files?.[0]&&onChange(e.target.files[0])}/></label></div></div>;
 }
