@@ -40,3 +40,6 @@ export interface TeamMember {
 }
 
 export const teamMembers: TeamMember[] = adminData.teamMembers;
+
+export interface Career { id:string; title:string; location:string; description:string; responsibilities:string[]; requirements:string[]; active:boolean; }
+export const careers: Career[] = adminData.careers || [];
