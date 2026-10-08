@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const { Pool } = require("pg");
 
 const PORT = Number(process.env.PORT || 10000);
 const ROOT = process.cwd();
@@ -13,6 +14,8 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const SESSION_SECRET = process.env.ADMIN_SESSION_SECRET || crypto.randomBytes(32).toString("hex");
+const pool = process.env.DATABASE_URL ? new Pool({connectionString:process.env.DATABASE_URL,ssl:process.env.DATABASE_URL.includes("render.com")?{rejectUnauthorized:false}:undefined}) : null;
+async function ensureDb(){ if(!pool) return; await pool.query(`CREATE TABLE IF NOT EXISTS job_applications (id BIGSERIAL PRIMARY KEY, name TEXT NOT NULL, phone TEXT NOT NULL, email TEXT, message TEXT, job_id TEXT NOT NULL, job_title TEXT NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT NOW())`); }
 
 function json(res, status, body) {
   const out = JSON.stringify(body);
@@ -84,6 +87,13 @@ function safeImagePath(p) {
 
 async function handle(req,res) {
   const url = new URL(req.url, "http://localhost");
+  if (url.pathname === "/api/applications" && req.method === "POST") {
+    if (!pool) return json(res,503,{error:"Applications database is not configured."});
+    const b=await body(req);
+    if(!b.name || !b.phone || !b.jobId || !b.jobTitle) return json(res,400,{error:"Name, phone and job are required."});
+    await pool.query("INSERT INTO job_applications (name,phone,email,message,job_id,job_title) VALUES ($1,$2,$3,$4,$5,$6)",[String(b.name).trim(),String(b.phone).trim(),String(b.email||"").trim(),String(b.message||"").trim(),String(b.jobId),String(b.jobTitle)]);
+    return json(res,201,{ok:true});
+  }
   if (url.pathname === "/api/admin/login" && req.method === "POST") {
     const b = await body(req);
     if (!ADMIN_USERNAME || !ADMIN_PASSWORD) return json(res,500,{error:"Admin credentials are not configured on Render."});
@@ -98,6 +108,11 @@ async function handle(req,res) {
     if (!validSession(req)) return json(res,401,{error:"Not authenticated"});
     try {
       if (url.pathname === "/api/admin/content" && req.method === "GET") return json(res,200,await readAdminData());
+      if (url.pathname === "/api/admin/applications" && req.method === "GET") {
+        if (!pool) return json(res,503,{error:"Applications database is not configured."});
+        const q=await pool.query("SELECT id,name,phone,email,message,job_id,job_title,created_at FROM job_applications ORDER BY created_at DESC LIMIT 500");
+        return json(res,200,q.rows);
+      }
       if (url.pathname === "/api/admin/content" && req.method === "PUT") {
         const next = await body(req);
         if (!next || !Array.isArray(next.projects) || !next.site) return json(res,400,{error:"Invalid content payload"});
@@ -136,4 +151,4 @@ async function handle(req,res) {
   if(fs.existsSync(index)){res.writeHead(200,{"Content-Type":"text/html"});return fs.createReadStream(index).pipe(res);}
   json(res,404,{error:"Not found"});
 }
-http.createServer((req,res)=>handle(req,res).catch(e=>{console.error(e);json(res,500,{error:"Server error"})})).listen(PORT,"0.0.0.0",()=>console.log("Bee Home Creators server listening on "+PORT));
+http.createServer((req,res)=>handle(req,res).catch(e=>{console.error(e);json(res,500,{error:"Server error"})})).listen(PORT,"0.0.0.0",async()=>{try{await ensureDb();console.log("Bee Home Creators server listening on "+PORT)}catch(e){console.error("Database init failed",e.message)}});
