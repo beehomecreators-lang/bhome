@@ -154,7 +154,7 @@ export function App() {
       <div ref={transitionRef} className="page-transition" aria-hidden="true">
         <span>Bee Home Creators</span>
       </div>
-      {project ? (
+      {path === "/admin" ? (\n        <AdminPage />\n      ) : project ? (
         <ProjectDetail key={project.id} project={project} onBack={goHome} />
       ) : path === "/team" || path === "/employees" ? (
         <TeamPage />
