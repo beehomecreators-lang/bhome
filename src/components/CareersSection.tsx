@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { BriefcaseBusiness, CheckCircle2, Send } from "lucide-react";
 import { careers } from "../data/content";
 
@@ -10,7 +11,7 @@ export function CareersSection() {
 
   if(!job) return null;
 
-  const submit=async(e:React.FormEvent)=>{
+  const submit=async(e:FormEvent)=>{
     e.preventDefault(); setStatus("Submitting...");
     try{
       const r=await fetch("/api/applications",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...form,jobId:job.id,jobTitle:job.title})});
