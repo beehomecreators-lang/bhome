@@ -16,6 +16,8 @@ type Project = {
 };
 
 type TeamMember = { id: string; name: string; designation: string; mobile: string };
+type Career = { id:string; title:string; location:string; description:string; responsibilities:string[]; requirements:string[]; active:boolean };
+type Application = { id:number; name:string; phone:string; email:string; message:string; job_title:string; created_at:string };
 
 type Data = {
   site: {
@@ -28,7 +30,7 @@ type Data = {
     ownerName: string; ownerTitle: string; companyLocation: string;
   };
   projects: Project[];
-  teamMembers: TeamMember[];
+  teamMembers: TeamMember[];\n  careers: Career[];
 };
 
 const emptyProject: Project = {
@@ -42,10 +44,10 @@ export function AdminPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState<Data | null>(null);
-  const [tab, setTab] = useState<"home" | "projects" | "about" | "team" | "contact">("projects");
+  const [tab, setTab] = useState<"home" | "projects" | "about" | "team" | "contact" | "careers" | "applications">("projects");
   const [selected, setSelected] = useState<string | null>(null);
   const [status, setStatus] = useState("");
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState(false);\n  const [applications, setApplications] = useState<Application[]>([]);
 
   const load = async () => {
     const r = await fetch("/api/admin/content", { credentials: "include" });
@@ -100,23 +102,23 @@ export function AdminPage() {
     <div style={styles.shell}>
       <aside style={styles.sidebar}>
         <div style={styles.brand}><span>🐝</span><div><strong>Bee Home</strong><small>Creators Admin</small></div></div>
-        {(["home","projects","about","team","contact"] as const).map(x =>
+        {(["home","projects","about","team","careers","applications","contact"] as const).map(x =>
           <button key={x} onClick={()=>{setTab(x);setSelected(null)}} style={tab===x?styles.navActive:styles.nav}>
-            {x === "home" ? "🏠 Home" : x === "projects" ? "🏘️ Projects" : x === "about" ? "ℹ️ About Us" : x === "team" ? "👥 Team" : "📞 Contact"}
+            {x === "home" ? "🏠 Home" : x === "projects" ? "🏘️ Projects" : x === "about" ? "ℹ️ About Us" : x === "team" ? "👥 Team" : x === "careers" ? "💼 Careers" : x === "applications" ? "📋 Applications" : "📞 Contact"}
           </button>
         )}
         <a href="/" style={styles.back}><ArrowLeft size={16}/> View website</a>
       </aside>
       <main style={styles.main}>
         <header style={styles.header}>
-          <div><span style={styles.kicker}>BEE HOME CREATORS</span><h1>{tab === "projects" ? "Projects" : tab === "home" ? "Homepage" : tab === "about" ? "About Us" : tab === "team" ? "Team" : "Contact & Footer"}</h1></div>
+          <div><span style={styles.kicker}>BEE HOME CREATORS</span><h1>{tab === "projects" ? "Projects" : tab === "home" ? "Homepage" : tab === "about" ? "About Us" : tab === "team" ? "Team" : tab === "careers" ? "Careers" : tab === "applications" ? "Job Applications" : "Contact & Footer"}</h1></div>
           <button onClick={save} disabled={busy} style={styles.primary}><Save size={17}/> {busy ? "Saving..." : "Save changes"}</button>
         </header>
         {status && <div style={styles.success}><Check size={16}/> {status}</div>}
         {tab === "home" && <HomeEditor data={data} setData={setData} onImage={async (file)=>uploadImage(file,setData,data,setBusy,setStatus)} />}
         {tab === "about" && <AboutEditor data={data} setData={setData} />}
         {tab === "contact" && <ContactEditor data={data} setData={setData} />}
-        {tab === "team" && <TeamEditor data={data} setData={setData} />}
+        {tab === "team" && <TeamEditor data={data} setData={setData} />}\n        {tab === "careers" && <CareersEditor data={data} setData={setData} />}\n        {tab === "applications" && <ApplicationsEditor applications={applications} />}
         {tab === "projects" && (
           project
             ? <ProjectEditor project={project} data={data} setData={setData} onBack={()=>setSelected(null)} onImage={async (file)=>uploadImage(file,setData,data,setBusy,setStatus)} />
