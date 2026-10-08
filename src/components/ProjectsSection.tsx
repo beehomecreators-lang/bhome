@@ -129,9 +129,7 @@ function ProjectCard({
           data-cursor-label="Zoom"
           onClick={() =>
             onZoom(
-              project.id === "sre-vasantham-avenue"
-                ? "/images/vasantham avenue/Gemini_Generated_Image_ahvqlzahvqlzahvq.png?v=20260922"
-                : project.image,
+              project.image,
               `${project.name} plot project`
             )
           }
